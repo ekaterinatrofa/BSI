@@ -14,7 +14,7 @@ Blowfish is deemed secure and it is fast. However, its keys should be chosen to 
 
 ###### Encrypted text
 
-![]https://github.com/ekaterinatrofa/BSI/blob/main/cipher/image%20(1).png)
+![]https://github.com/ekaterinatrofa/BSI/blob/main/cipher/image%20(1).png
 
 ###### Decrypted text
 
