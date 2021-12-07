@@ -1,0 +1,184 @@
+#Author: Kateryna Trofymenko
+diff --git a/out/production/project/com/company/NotepadFunctionCipher.class b/out/production/project/com/company/NotepadFunctionCipher.class
+index a721b18..a6845c1 100644
+Binary files a/out/production/project/com/company/NotepadFunctionCipher.class and b/out/production/project/com/company/NotepadFunctionCipher.class differ
+diff --git a/out/production/project/com/company/NotepadFunctionFile.class b/out/production/project/com/company/NotepadFunctionFile.class
+index 2a907e6..d5b3f8a 100644
+Binary files a/out/production/project/com/company/NotepadFunctionFile.class and b/out/production/project/com/company/NotepadFunctionFile.class differ
+diff --git a/out/production/project/com/company/NotepadFunctionFormat.class b/out/production/project/com/company/NotepadFunctionFormat.class
+index c48958f..81b35d0 100644
+Binary files a/out/production/project/com/company/NotepadFunctionFormat.class and b/out/production/project/com/company/NotepadFunctionFormat.class differ
+diff --git a/out/production/project/com/company/NotepadGUI$1.class b/out/production/project/com/company/NotepadGUI$1.class
+index d20baa4..99a5b89 100644
+Binary files a/out/production/project/com/company/NotepadGUI$1.class and b/out/production/project/com/company/NotepadGUI$1.class differ
+diff --git a/out/production/project/com/company/NotepadGUI.class b/out/production/project/com/company/NotepadGUI.class
+index d255e1b..95ff2a3 100644
+Binary files a/out/production/project/com/company/NotepadGUI.class and b/out/production/project/com/company/NotepadGUI.class differ
+diff --git a/src/com/company/NotepadFunctionCipher.java b/src/com/company/NotepadFunctionCipher.java
+#EXP00-J. Do not ignore values returned by methods
+index 9d9626b..f7edda7 100644
+--- a/src/com/company/NotepadFunctionCipher.java
++++ b/src/com/company/NotepadFunctionCipher.java
+@@ -34,8 +34,7 @@ public class NotepadFunctionCipher {
+                     char c = chars[i];
+                     char encrypted = encrypt(c, key);
+                     textAfter = Character.toString(encrypted);
+-                    textAfter.split("\\s");
+-                    String[] outputArray = {textAfter};
++                    String[] outputArray = textAfter.split("\\s");
+ 
+                     for (int index = 0; index < outputArray.length; index++) {
+                         notepadGUI.textNotepad.append(outputArray[index]);
+diff --git a/src/com/company/NotepadFunctionFile.java b/src/com/company/NotepadFunctionFile.java
+#FIO04-J. Release resources when they are no longer needed
+#ERR54-J. Use a try-with-resources statement to safely handle closeable resources
+#ERR02-J. Prevent exceptions while logging data
+index 8fa40fa..f412096 100644
+--- a/src/com/company/NotepadFunctionFile.java
++++ b/src/com/company/NotepadFunctionFile.java
+@@ -5,11 +5,16 @@ import java.awt.*;
+ import java.io.BufferedReader;
+ import java.io.FileReader;
+ import java.io.FileWriter;
++import java.util.logging.Level;
++import java.util.logging.LogManager;
++import java.util.logging.Logger;
++
+ 
+ public class NotepadFunctionFile {
+     NotepadGUI notepadGUI;
+     private String fileName;
+     private String fileAddress;
++    private static Logger logger = Logger.getLogger(NotepadFunctionFile.class.getName());
+ 
+     public NotepadFunctionFile(NotepadGUI notepadGUI) {
+         this.notepadGUI = notepadGUI;
+@@ -31,17 +36,22 @@ public class NotepadFunctionFile {
+             fileAddress = fileDialog.getDirectory();
+             notepadGUI.setTitle(fileName);
+         }
++        BufferedReader br = null;
+ 
+         try {
+-            BufferedReader br = new BufferedReader(new FileReader(fileAddress + fileName));//address to read the file
+-            notepadGUI.textNotepad.setText("");
+-            String line = null;
+-            while ((line = br.readLine()) != null) {
+-                notepadGUI.textNotepad.append(line + "\n");
++            br = new BufferedReader(new FileReader(fileAddress + fileName));//address to read the file
++            try{
++                notepadGUI.textNotepad.setText("");
++                String line = null;
++                while ((line = br.readLine()) != null) {
++                    notepadGUI.textNotepad.append(line + "\n");
++                }
++            }finally {
++
++                        br.close();
+             }
+-            br.close();
+         } catch (Exception e) {
+-            System.out.println("FILE NOT OPENED!");
++            logger.info("FILE NOT OPENED!");
+         }
+     }
+ 
+@@ -49,13 +59,18 @@ public class NotepadFunctionFile {
+         if (fileName == null) {
+             saveAsFile();
+         } else {
++            FileWriter fileWriter = null;
+             try {
+-                FileWriter fileWriter = new FileWriter(fileAddress + fileName);
+-                fileWriter.write(notepadGUI.textNotepad.getText());
+-                notepadGUI.setTitle(fileName);
+-                fileWriter.close();
++                fileWriter = new FileWriter(fileAddress + fileName);
++                try{
++                    fileWriter.write(notepadGUI.textNotepad.getText());
++                    notepadGUI.setTitle(fileName);
++                } finally {
++                    fileWriter.close();
++                }
++
+             } catch (Exception e) {
+-                System.out.println("ERROR!");
++                logger.info("ERROR!");
+             }
+         }
+     }
+@@ -69,14 +84,19 @@ public class NotepadFunctionFile {
+             fileAddress = fileDialog.getDirectory();
+             notepadGUI.setTitle(fileName);
+         }
++        FileWriter fileWriter = null;
+ 
+         try {
+-            FileWriter fileWriter = new FileWriter(fileAddress + fileName);
+-            fileWriter.write(notepadGUI.textNotepad.getText());
+-            JOptionPane.showMessageDialog(notepadGUI,"File saved");
+-            fileWriter.close();
++            fileWriter = new FileWriter(fileAddress + fileName);
++            try{
++                fileWriter.write(notepadGUI.textNotepad.getText());
++                JOptionPane.showMessageDialog(notepadGUI,"File saved");
++            } finally {
++                    fileWriter.close();
++            }
++
+         } catch (Exception e) {
+-            System.out.println("ERROR!");
++            logger.info("ERROR!");
+         }
+     }
+ 
+diff --git a/src/com/company/NotepadFunctionFormat.java b/src/com/company/NotepadFunctionFormat.java
+#DCL52-J. Do not declare more than one variable per declaration
+index 3a41fbd..da0bd28 100644
+--- a/src/com/company/NotepadFunctionFormat.java
++++ b/src/com/company/NotepadFunctionFormat.java
+@@ -4,7 +4,9 @@ import java.awt.*;
+ 
+ public class NotepadFunctionFormat {
+     NotepadGUI notepadGUI;
+-    Font arial, comic, times;
++    Font arial;
++    Font comic;
++    Font times;
+     String selectedFont;
+ 
+     public NotepadFunctionFormat(NotepadGUI notepadGUI) {
+diff --git a/src/com/company/NotepadGUI.java b/src/com/company/NotepadGUI.java
+index f9a6786..1a745e4 100644
+--- a/src/com/company/NotepadGUI.java
++++ b/src/com/company/NotepadGUI.java
+@@ -18,17 +18,25 @@ public class NotepadGUI extends JFrame implements ActionListener {
+ 
+     /**Top menu bar**/
+     public JMenuBar menuBar;
+-    public JMenu fileMenu, editMenu, formatMenu, cipherMenu;
++    public JMenu fileMenu;
++    JMenu cipherMenu;
++    JMenu formatMenu;
++    JMenu editMenu;
+ 
+     /**format**/
+     public JMenu fontMenu;
+-    public JMenuItem wrap, fontArial, fontComic, fontTimes;
++    public JMenuItem wrap;
++    JMenuItem fontTimes;
++    JMenuItem fontComic;
++    JMenuItem fontArial;
+ 
+     /**edit**/
+-    public JMenuItem undo, redo;
++    public JMenuItem undo;
++    JMenuItem redo;
+ 
+     /**cipher**/
+-    public JMenuItem encrypt, decrypt;
++    public JMenuItem encrypt;
++    JMenuItem decrypt;
+ 
+     public JMenuItem exitMenuItem;
+ 
