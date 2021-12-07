@@ -12,6 +12,14 @@ Blowfish is a symmetric block cipher designed by Bruce Schneier.
 It has a fixed data block size of 8 bytes and its keys can vary in length from 32 to 448 bits (4 to 56 bytes).
 Blowfish is deemed secure and it is fast. However, its keys should be chosen to be big enough to withstand a brute force attack (e.g. at least 16 bytes).
 
+###### Encrypted text
+
+![]https://github.com/ekaterinatrofa/BSI/blob/main/cipher/image%20(1).png)
+
+###### Decrypted text
+
+![]https://github.com/ekaterinatrofa/BSI/blob/main/cipher/image.png
+
 ###### Installation:
 
 ```
@@ -59,20 +67,6 @@ pip install RC6Encryption
 
 - [https://pypi.org/project/RC6Encryption/](https://pypi.org/project/RC6Encryption/)
 - [https://asecuritysite.com/encryption/rc6](https://asecuritysite.com/encryption/rc6)
-
-
-###### SonarLint reports
-
-![](https://github.com/ekaterinatrofa/BSI/blob/master/SWE4_BP-3_BP-4_BP-7/CarApp/Report_1.JPG)
-
-
-
-
-
-
-
-
-
 
 Author:
 
