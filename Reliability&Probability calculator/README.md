@@ -54,7 +54,7 @@ The probability is 61%.
 ```
 What is the reliability of the following system?
 ```
-![](https://github.com/ekaterinatrofa/BSI_calculator/blob/master/Reliability%26Probability%20calculator/img.png)
+![](./img.png)
 
 ```
 Answer:
