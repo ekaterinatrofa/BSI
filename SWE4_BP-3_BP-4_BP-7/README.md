@@ -48,9 +48,9 @@ It will help you in following ways:
 
 ###### SonarLint reports
 
-![](https://github.com/ekaterinatrofa/BSI/blob/master/SWE4_BP-3_BP-4_BP-7/CarApp/Report_1.JPG)
+![](./CarApp/Report_1.JPG)
 
-![](https://github.com/ekaterinatrofa/BSI/blob/master/SWE4_BP-3_BP-4_BP-7/CarApp/Report_2.JPG)
+![](./CarApp/Report_2.JPG)
 
 
 ***JaCoCo*** was selected as a test coverage tool 
@@ -70,7 +70,7 @@ We can run the test cases either at the project level or at the class level.
 
 ###### Test coverage report
 
-![](https://github.com/ekaterinatrofa/BSI/blob/master/SWE4_BP-3_BP-4_BP-7/CarApp/Report_coverage.JPG)
+![](./CarApp/Report_coverage.JPG)
 
 We built our test class and attached the Mockito extension to it: 
 ```@ExtendWith(MockitoExtension.class) ```
