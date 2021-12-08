@@ -27,7 +27,7 @@ It will help you in following ways:
 
 ###### SonarLint report
 
-![](https://github.com/ekaterinatrofa/BSI_calculator/blob/master/check_CERT_JAVA_Coding_Standard/Report.png)
+![](./Report.png)
 
 
 ###### CERT, DCL52-J. Do not declare more than one variable per declaration
