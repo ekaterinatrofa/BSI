@@ -13,7 +13,7 @@ RC6
 RC6 (Rivest Cipher 6) is derived from RC5, and is a symmetric key block cipher
 """
 import blowfish
-import rc6
+# import rc6
 import twoFish
 import helper
 
