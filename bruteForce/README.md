@@ -25,10 +25,10 @@ pip install pycryptodome
 ![](./result.jpg)
 
 ###### The key
+```
+dudupa
+```
 
-```
-dupadupa
-```
 ###### The message
 
 ```
