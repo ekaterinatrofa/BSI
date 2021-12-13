@@ -26,7 +26,7 @@ pip install pycryptodome
 
 ###### The key
 ```
-dudupa
+dupadupa
 ```
 
 ###### The message
