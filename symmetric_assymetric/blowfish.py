@@ -1,4 +1,6 @@
 """
+Source: https://pycryptodome.readthedocs.io/en/latest/src/cipher/blowfish.html
+
 Author: Kateryna Trofymenko
 """
 

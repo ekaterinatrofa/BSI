@@ -1,3 +1,8 @@
+"""
+Source: https://github.com/RyanRiddle/elgamal
+
+Author: Kateryna Trofymenko
+"""
 import random
 import math
 import sys

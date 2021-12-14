@@ -1,6 +1,7 @@
 """
-Author: Kateryna Trofymenko
+Source: https://devrescue.com/python-twofish-encryption/
 
+Author: Kateryna Trofymenko
 """
 
 from twofish import Twofish

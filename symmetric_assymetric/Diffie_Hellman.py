@@ -1,3 +1,8 @@
+"""
+Source: https://medium.com/@sadatnazrul/diffie-hellman-key-exchange-explained-python-8d67c378701c
+
+Author: Kateryna Trofymenko
+"""
 class DH_Endpoint(object):
     def __init__(self, public_key1, public_key2, private_key):
         self.public_key1 = public_key1
