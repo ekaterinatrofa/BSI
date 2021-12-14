@@ -18,7 +18,7 @@ import random
 
 import ElGamal
 import blowfish
-# import rc6
+import rc6
 import twoFish
 import helper
 from Diffie_Hellman import DH_Endpoint
@@ -63,11 +63,11 @@ if __name__ == "__main__":
                 print("Your choice is RC6")
                 folder_name = input("Provide the folder name for creating folder and files ")
                 folder = helper.make_folder(folder_name)
-                # rc6.encrypt(folder, rc6.ask_for_password_rc6())
+                rc6.encrypt(folder, rc6.ask_for_password_rc6())
                 i = str(input())
                 if i == "yes":
                     print("Do you want to decrypt? Print 'yes' if you want and 'no' if you don't ")
-                    # rc6.decrypt(folder, rc6.ask_for_password_rc6())
+                    rc6.decrypt(folder, rc6.ask_for_password_rc6())
                 elif i == "no":
                     print('You refuse to decrypt files')
 
@@ -123,11 +123,4 @@ if __name__ == "__main__":
         elif choice == "0":
             break
 
-# print("1 - Blowfish")
-# print("2 - Twofish")
-# print("3 - RC6")
-# print("4 - h")
-# print("5 - ElGamal")
-# print("0 - exit")
-# choice = input("Choose the type of cipher ")
-# print()
+
