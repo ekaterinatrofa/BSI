@@ -20,31 +20,31 @@
 ***DSVW (Damn Small Vulnerable Web)***
 
 
-![](./ds_1.jpg)
-![](./ds_2.jpg)
-![](./ds_3.jpg)
-![](./ds_4.jpg)
-![](./ds_5.jpg)
-![](./ds_6.jpg)
-![](./ds_7.jpg)
-![](./ds_8.jpg)
-![](./ds_9.jpg)
-![](./ds_10.jpg)
-![](./ds_11.jpg)
-![](./ds_12.jpg)
-![](./ds_13.jpg)
-![](./ds_14.jpg)
+![](./reports/ds_1.jpg)
+![](./reports/ds_2.jpg)
+![](./reports/ds_3.jpg)
+![](./reports/ds_4.jpg)
+![](./reports/ds_5.jpg)
+![](./reports/ds_6.jpg)
+![](./reports/ds_7.jpg)
+![](./reports/ds_8.jpg)
+![](./reports/ds_9.jpg)
+![](./reports/ds_10.jpg)
+![](./reports/ds_11.jpg)
+![](./reports/ds_12.jpg)
+![](./reports/ds_13.jpg)
+![](./reports/ds_14.jpg)
 
 
 ***Google Gruyere***
 
 ![](./reports/gg_1.jpg)
 ![](./reports/gg_2.jpg)
-![](./gg_3.jpg)
-![](./gg_4.jpg)
-![](./gg_5.jpg)
-![](./gg_6.jpg)
-![](./gg_7.jpg)
+![](./reports/gg_3.jpg)
+![](./reports/gg_4.jpg)
+![](./reports/gg_5.jpg)
+![](./reports/gg_6.jpg)
+![](./reports/gg_7.jpg)
 
 
 
