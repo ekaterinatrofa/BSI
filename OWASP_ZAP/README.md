@@ -38,8 +38,8 @@
 
 ***Google Gruyere***
 
-![](./gg_1.jpg)
-![](./gg_2.jpg)
+![](./reports/gg_1.jpg)
+![](./reports/gg_2.jpg)
 ![](./gg_3.jpg)
 ![](./gg_4.jpg)
 ![](./gg_5.jpg)
